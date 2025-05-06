@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}GlamMate - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to GlamMate</h1>
+        <p class="lead">Your Personal Beauty Booking Assistant</p>
+        <a href="{{ url_for('services') }}" class="btn btn-primary btn-lg mt-3">Book an Appointment</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section bg-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">About Our Parlor</h2>
+                <p>GlamMate is a premier beauty parlor dedicated to enhancing your natural beauty. Our team of skilled professionals is committed to providing exceptional services tailored to your unique needs.</p>
+                <p>With years of experience in the beauty industry, we use only high-quality products and the latest techniques to ensure you leave our salon looking and feeling your best.</p>
+                <a href="{{ url_for('services') }}" class="btn btn-primary mt-3">Explore Our Services</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035" alt="Beauty Parlor" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Highlight -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Premium Services</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e" class="card-img-top" alt="Facial Treatment">
+                    <div class="card-body">
+                        <h5 class="card-title">Facial Treatments</h5>
+                        <p class="card-text">Rejuvenate your skin with our specialized facial treatments designed to address various skin concerns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f" class="card-img-top" alt="Haircut">
+                    <div class="card-body">
+                        <h5 class="card-title">Hair Styling</h5>
+                        <p class="card-text">From trendy cuts to elegant styles, our hair experts will transform your look with precision and creativity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626" class="card-img-top" alt="Bridal Makeup">
+                    <div class="card-body">
+                        <h5 class="card-title">Bridal Makeup</h5>
+                        <p class="card-text">Look radiant on your special day with our professional bridal makeup services tailored to your style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('services') }}" class="btn btn-primary">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section bg-white">
+    <div class="container">
+        <h2 class="text-center mb-5">What Our Clients Say</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"The facial treatment was amazing! My skin feels so refreshed and the staff was incredibly professional."</p>
+                        <p class="fw-bold mb-0">- Sarah Johnson</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"I love my new haircut! The stylist really understood what I wanted and exceeded my expectations."</p>
+                        <p class="fw-bold mb-0">- Michael Brown</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"My bridal makeup was perfect! Everyone complimented how beautiful I looked on my wedding day."</p>
+                        <p class="fw-bold mb-0">- Emily Davis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section" style="background-color: var(--primary-color); color: white;">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to Book Your Appointment?</h2>
+        <p class="lead mb-4">Experience the best beauty services tailored just for you.</p>
+        <a href="{{ url_for('services') }}" class="btn btn-light btn-lg">Book Now</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}GlamMate - Services{% endblock %}
+
+{% block extra_css %}
+<style>
+    .service-card {
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .booking-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Services Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h1 class="text-center mb-4">Our Services</h1>
+        <p class="lead text-center">Discover our range of professional beauty services designed to enhance your natural beauty.</p>
+    </div>
+</section>
+
+<!-- Services List -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Facial Treatments -->
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e" class="card-img-top" alt="Facial Treatment">
+                    <div class="card-body">
+                        <h5 class="card-title">Facial Treatments</h5>
+                        <p class="card-text">Our facial treatments are designed to cleanse, exfoliate, and nourish your skin, promoting a clear, well-hydrated complexion.</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Basic Facial
+                                <span class="badge bg-primary rounded-pill">$50</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Deep Cleansing Facial
+                                <span class="badge bg-primary rounded-pill">$75</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Anti-Aging Facial
+                                <span class="badge bg-primary rounded-pill">$90</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hair Styling -->
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f" class="card-img-top" alt="Hair Styling">
+                    <div class="card-body">
+                        <h5 class="card-title">Hair Styling</h5>
+                        <p class="card-text">From trendy cuts to elegant styles, our hair experts will transform your look with precision and creativity.</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Haircut & Styling
+                                <span class="badge bg-primary rounded-pill">$45</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Hair Coloring
+                                <span class="badge bg-primary rounded-pill">$85</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Keratin Treatment
+                                <span class="badge bg-primary rounded-pill">$120</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bridal Makeup -->
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626" class="card-img-top" alt="Bridal Makeup">
+                    <div class="card-body">
+                        <h5 class="card-title">Bridal Makeup</h5>
+                        <p class="card-text">Look radiant on your special day with our professional bridal makeup services tailored to your style.</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Bridal Trial
+                                <span class="badge bg-primary rounded-pill">$75</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Bridal Makeup
+                                <span class="badge bg-primary rounded-pill">$150</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Bridal Package (Hair + Makeup)
+                                <span class="badge bg-primary rounded-pill">$250</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Form -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="booking-form">
+                    <h2 class="text-center mb-4">Book an Appointment</h2>
+                    <form action="{{ url_for('book_appointment') }}" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Your Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Select Service</label>
+                            <select class="form-select" id="service" name="service" required>
+                                <option value="" selected disabled>Choose a service...</option>
+                                <optgroup label="Facial Treatments">
+                                    <option value="Basic Facial">Basic Facial</option>
+                                    <option value="Deep Cleansing Facial">Deep Cleansing Facial</option>
+                                    <option value="Anti-Aging Facial">Anti-Aging Facial</option>
+                                </optgroup>
+                                <optgroup label="Hair Styling">
+                                    <option value="Haircut & Styling">Haircut & Styling</option>
+                                    <option value="Hair Coloring">Hair Coloring</option>
+                                    <option value="Keratin Treatment">Keratin Treatment</option>
+                                </optgroup>
+                                <optgroup label="Bridal Makeup">
+                                    <option value="Bridal Trial">Bridal Trial</option>
+                                    <option value="Bridal Makeup">Bridal Makeup</option>
+                                    <option value="Bridal Package">Bridal Package (Hair + Makeup)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferred_time" class="form-label">Preferred Date & Time</label>
+                            <input type="datetime-local" class="form-control" id="preferred_time" name="preferred_time" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notes" class="form-label">Additional Notes (Optional)</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Set minimum date for booking to today
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        const formattedDate = today.toISOString().slice(0, 16);
+        document.getElementById('preferred_time').min = formattedDate;
+    });
+</script>
+{% endblock %}
